@@ -13,6 +13,7 @@ public class Boundary {
 
 
 public class EnemyController : MonoBehaviour {
+    public GameController gameController;
 	// PUBLIC INSTANCE VARIABLES
 	public Speed speed;
 	public Boundary boundary;
@@ -43,5 +44,6 @@ public class EnemyController : MonoBehaviour {
 		this._CurrentSpeed = Random.Range (speed.minSpeed, speed.maxSpeed);
 		Vector2 resetPosition = new Vector2 (Random.Range(boundary.xMin, boundary.xMax), boundary.yMax);
 		gameObject.GetComponent<Transform> ().position = resetPosition;
+        this.gameController.ScoreValue += 10;
 	}
 }
