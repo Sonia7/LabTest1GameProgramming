@@ -38,6 +38,18 @@ public class EnemyController : MonoBehaviour {
 			this._Reset();
 		}
 	}
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            this._CurrentSpeed = Random.Range(speed.minSpeed, speed.maxSpeed);
+            Vector2 resetPosition = new Vector2(Random.Range(boundary.xMin, boundary.xMax), boundary.yMax);
+            gameObject.GetComponent<Transform>().position = resetPosition;
+            
+        }
+
+    }
 
 	// resets the gameObject
 	private void _Reset() {

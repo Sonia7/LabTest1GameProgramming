@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour {
     public Text GameOverLabel;
     public Text HighScoreLabel;
     public Button RestartButton;
+
 	// Use this for initialization
 	void Start () {
         this._initialize();
@@ -85,7 +86,7 @@ public class GameController : MonoBehaviour {
         this.HighScoreLabel.gameObject.SetActive(true);
         this.LivesLabel.gameObject.SetActive(false);
         this.ScoreLabel.gameObject.SetActive(false);
-       
+        
         this.RestartButton.gameObject.SetActive(true);
     }
 
